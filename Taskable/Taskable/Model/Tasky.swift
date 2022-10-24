@@ -8,16 +8,22 @@
 import Foundation
 import SwiftUI
 
-enum prio : Hashable, Codable{
-    case urgent,normal
+enum Priority: String, Hashable {
+    case urgent = "Urgent"
+    case normal = "Normal"
 }
 
-struct Tasky : Hashable, Codable, Identifiable{
+struct Tasky: Hashable, Identifiable{
     var id: UUID
-    var name : String
-    var bio : String
-    var priority : prio
-    var date : Date?
+    var name: String
+    var bio: String
+    var priority: Priority
+    var date: Date?
     /// tag ?
+    
+    
+    static func emptyTask() -> Tasky {
+        Tasky(id: UUID(), name: "", bio: "", priority: .normal)
+    }
 }
 
