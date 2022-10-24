@@ -59,6 +59,7 @@
 		B7241539290681AF009E8595 /* Taskable */ = {
 			isa = PBXGroup;
 			children = (
+				C17EE6B9290689B1005F47EA /* ViewModel */,
 				C10F1F20290686BE00CDAEBF /* Views */,
 				B724156029068357009E8595 /* Model */,
 				B724153A290681AF009E8595 /* TaskableApp.swift */,
@@ -82,7 +83,6 @@
 			children = (
 				B724156129068357009E8595 /* Tasky.swift */,
 				B724156229068357009E8595 /* database.swift */,
-				B724156329068357009E8595 /* TaskViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -101,6 +101,14 @@
 				C17EE6B72906877A005F47EA /* NewTaskView.swift */,
 			);
 			path = NewTask;
+			sourceTree = "<group>";
+		};
+		C17EE6B9290689B1005F47EA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B724156329068357009E8595 /* TaskViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
