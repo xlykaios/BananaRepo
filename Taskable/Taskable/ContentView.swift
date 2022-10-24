@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var isNewTaskViewPresented: Bool = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        Button("Create new task") {
+            isNewTaskViewPresented.toggle()
         }
-        .padding()
+        .sheet(isPresented: $isNewTaskViewPresented) {
+            NewTaskView()
+        }
     }
 }
 

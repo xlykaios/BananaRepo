@@ -10,6 +10,10 @@ import SwiftUI
 struct NewTaskView: View {
     
     private enum Const {
+        static let viewTitle = "New Task"
+        static let closeBarButtonTitle = "Close"
+        static let doneBarButtonTitle = "Done"
+        
         static let titlePlaceholder = "Title"
         static let notesPlaceholder = "Notes"
         
@@ -27,6 +31,8 @@ struct NewTaskView: View {
     @State private var taskPriority: Priority = .normal
     @State private var hasDeadline: Bool = true
     @State private var date = Date()
+    
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         NavigationView {
@@ -97,16 +103,17 @@ struct NewTaskView: View {
             }
             .foregroundColor(.white)
             // MARK: - Navigation setup
-            .navigationTitle("New Task").foregroundColor(.white)
+            .navigationTitle(Const.viewTitle).foregroundColor(.white)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Close") {
-                        print("Tapped close")
+                    Button(Const.closeBarButtonTitle) {
+                        dismiss()
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done") {
-                        print("Tapped done")
+                    Button(Const.doneBarButtonTitle) {
+                        // TODO: implement saving new task
+                        dismiss()
                     }
                 }
             }
@@ -114,12 +121,8 @@ struct NewTaskView: View {
     }
     
     init() {
-//        super.init()
-        //Use this if NavigationBarTitle is with Large Font
+        // Navigation bar title style
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-
-        //Use this if NavigationBarTitle is with displayMode = .inline
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
     }
 }
 
