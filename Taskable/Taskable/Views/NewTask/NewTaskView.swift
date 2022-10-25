@@ -9,6 +9,8 @@ import SwiftUI
 
 struct NewTaskView: View {
     
+    // MARK: - State variables
+    
     @State private var taskName = ""
     @State private var taskNotes = ""
     @State private var taskPriority: Priority = .urgent
@@ -17,90 +19,58 @@ struct NewTaskView: View {
     
     @Environment(\.dismiss) private var dismiss
     
+    // MARK: - View
+    
     var body: some View {
         NavigationView {
-            ZStack {
-                Const.backgroundColor.ignoresSafeArea(.all)
-                ScrollView {
-                    
-                    VStack {
-                        // MARK: - Text input section
-                        VStack {
-                            TextField(Const.titlePlaceholder, text: $taskName)
-                                .padding([.horizontal, .top], 16)
-                                .padding([.bottom], 7)
-                            Divider()
-                            TextField(Const.notesPlaceholder, text: $taskNotes, axis: .vertical)
-                                .padding([.horizontal, .bottom], 16)
-                                .padding([.top], 7)
-                        }
-                        .background(Const.accentColor)
-                        .cornerRadius(8)
-                        
-                        // MARK: - Deadline section
-                        Toggle(isOn: $hasDeadline) {
-                            Text(Const.deadlineTitle)
-                                .font(.headline)
-                        }
-                        .padding([.horizontal], 16)
-                        .padding([.vertical], 11)
-                        .background(Const.accentColor)
-                        .cornerRadius(8)
-                        
-                        // MARK: - Datetime section
-                        if hasDeadline {
-                            VStack {
-                                DatePicker(
-                                    Const.dateTitle,
-                                    selection: $date,
-                                    in: Date()...
-                                )
-                                .foregroundColor(.white)
-                                .padding([.horizontal], 9)
-                                .datePickerStyle(.graphical)
-                                .background(Const.accentColor, in: RoundedRectangle(cornerRadius: 20))
-                            }
-                        }
-                        
-                        // MARK: - Priority section
-                        
-                        HStack {
-                            Text(Const.priorityTitle)
-                                .font(.headline)
-                            Spacer()
-                            Picker("", selection: $taskPriority) {
-                                ForEach(Priority.allCases) { priority in
-                                    Text(priority.rawValue.capitalized)
-                                }
-                            }
-                            .pickerStyle(.menu)
-                        }
-                        .padding(13)
-                        .background(Const.accentColor)
-                        .cornerRadius(8)
-                        
-                        // MARK: - Tags section
-                        
-                        NavigationLink {
-                            TagsSelectionView()
-                        } label: {
-                            HStack {
-                                Text(Const.tagsTitle)
-                                    .font(.headline)
-                                Spacer()
-                                Image(systemName: "chevron.right")
-                            }
-                            .padding(13)
-                            .background(Const.accentColor)
-                            .cornerRadius(8)
-                        }
-                        
-                        Spacer()
+            
+            Form {
+                // MARK: - Text input section
+                Section {
+                    TextField(Const.titlePlaceholder, text: $taskName)
+                    TextField(Const.notesPlaceholder, text: $taskNotes, axis: .vertical)
+                }
+                // MARK: - Deadline section
+                Section {
+                    Toggle(isOn: $hasDeadline) {
+                        Text(Const.deadlineTitle)
+                            .font(.headline)
                     }
-                    .padding(12)
+                    // MARK: - Datetime section
+                    if hasDeadline {
+                        DatePicker(
+                            Const.dateTitle,
+                            selection: $date,
+                            in: Date()...
+                        )
+                        .datePickerStyle(.graphical)
+                    }
+                }
+                // MARK: - Priority section
+                Section {
+                    HStack {
+                        Text(Const.priorityTitle)
+                            .font(.headline)
+                        Picker("", selection: $taskPriority) {
+                            ForEach(Priority.allCases) { priority in
+                                Text(priority.rawValue.capitalized)
+                            }
+                        }
+                        .pickerStyle(.menu)
+                    }
+                }
+                // MARK: - Tags section
+                Section {
+                    NavigationLink {
+                        TagsSelectionView()
+                    } label: {
+                        HStack {
+                            Text(Const.tagsTitle)
+                                .font(.headline)
+                        }
+                    }
                 }
             }
-            .foregroundColor(Const.labelColor)
             // MARK: - Navigation setup
             .navigationTitle(Const.viewTitle)
             .toolbar {
@@ -121,11 +91,15 @@ struct NewTaskView: View {
         }
     }
     
+    // MARK: - Initialization
+    
     init() {
         // Navigation bar title style
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.label]
     }
 }
+
+// MARK: - Constants
 
 private extension NewTaskView {
     private enum Const {
@@ -146,6 +120,8 @@ private extension NewTaskView {
         static let labelColor = Color(.label)
     }
 }
+
+// MARK: - Preview
 
 struct NewTaskView_Previews: PreviewProvider {
     static var previews: some View {
