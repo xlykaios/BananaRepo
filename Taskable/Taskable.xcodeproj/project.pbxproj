@@ -15,7 +15,6 @@
 		B724156529068357009E8595 /* database.swift in Sources */ = {isa = PBXBuildFile; fileRef = B724156229068357009E8595 /* database.swift */; };
 		B724156629068357009E8595 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B724156329068357009E8595 /* TaskViewModel.swift */; };
 		C17EE6B82906877A005F47EA /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17EE6B72906877A005F47EA /* NewTaskView.swift */; };
-		C1EF641D2907D8F200108625 /* PriorityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF641C2907D8F200108625 /* PriorityView.swift */; };
 		C1EF641F2907D92C00108625 /* TagsSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF641E2907D92C00108625 /* TagsSelectionView.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +28,6 @@
 		B724156229068357009E8595 /* database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = database.swift; sourceTree = "<group>"; };
 		B724156329068357009E8595 /* TaskViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		C17EE6B72906877A005F47EA /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
-		C1EF641C2907D8F200108625 /* PriorityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityView.swift; sourceTree = "<group>"; };
 		C1EF641E2907D92C00108625 /* TagsSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsSelectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				C17EE6B72906877A005F47EA /* NewTaskView.swift */,
-				C1EF641C2907D8F200108625 /* PriorityView.swift */,
 				C1EF641E2907D92C00108625 /* TagsSelectionView.swift */,
 			);
 			path = NewTask;
@@ -190,7 +187,6 @@
 				B724153D290681AF009E8595 /* ContentView.swift in Sources */,
 				B724156429068357009E8595 /* Tasky.swift in Sources */,
 				C1EF641F2907D92C00108625 /* TagsSelectionView.swift in Sources */,
-				C1EF641D2907D8F200108625 /* PriorityView.swift in Sources */,
 				C17EE6B82906877A005F47EA /* NewTaskView.swift in Sources */,
 				B724156529068357009E8595 /* database.swift in Sources */,
 				B724156629068357009E8595 /* TaskViewModel.swift in Sources */,

@@ -8,9 +8,10 @@
 import Foundation
 import SwiftUI
 
-enum Priority: String, Hashable {
-    case urgent = "Urgent"
-    case normal = "Normal"
+enum Priority: String, Identifiable, Hashable, CaseIterable {
+    case urgent
+    case normal
+    var id: Self { self }
 }
 
 struct Tasky: Hashable, Identifiable{

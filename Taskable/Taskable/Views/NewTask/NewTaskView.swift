@@ -11,7 +11,7 @@ struct NewTaskView: View {
     
     @State private var taskName = ""
     @State private var taskNotes = ""
-    @State private var taskPriority: Priority = .normal
+    @State private var taskPriority: Priority = .urgent
     @State private var hasDeadline: Bool = true
     @State private var date = Date()
     
@@ -64,21 +64,20 @@ struct NewTaskView: View {
                         
                         // MARK: - Priority section
                         
-                        NavigationLink {
-                            PriorityView()
-                        } label: {
-                            HStack {
-                                Text(Const.priorityTitle)
-                                    .font(.headline)
-                                Spacer()
-                                Text(taskPriority.rawValue)
-                                    .font(.body)
-                                Image(systemName: "chevron.right")
+                        HStack {
+                            Text(Const.priorityTitle)
+                                .font(.headline)
+                            Spacer()
+                            Picker("", selection: $taskPriority) {
+                                ForEach(Priority.allCases) { priority in
+                                    Text(priority.rawValue.capitalized)
+                                }
                             }
-                            .padding(13)
-                            .background(Const.accentColor)
-                            .cornerRadius(8)
+                            .pickerStyle(.menu)
                         }
+                        .padding(13)
+                        .background(Const.accentColor)
+                        .cornerRadius(8)
                         
                         // MARK: - Tags section
                         
