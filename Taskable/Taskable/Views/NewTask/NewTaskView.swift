@@ -29,16 +29,13 @@ struct NewTaskView: View {
                             TextField(Const.titlePlaceholder, text: $taskName)
                                 .padding([.horizontal, .top], 16)
                                 .padding([.bottom], 7)
-                                .cornerRadius(8)
                             Divider()
-                            TextField(Const.notesPlaceholder, text: $taskNotes)
+                            TextField(Const.notesPlaceholder, text: $taskNotes, axis: .vertical)
                                 .padding([.horizontal, .bottom], 16)
                                 .padding([.top], 7)
-                            
                         }
                         .background(Const.accentColor)
                         .cornerRadius(8)
-                        
                         
                         // MARK: - Deadline section
                         Toggle(isOn: $hasDeadline) {
