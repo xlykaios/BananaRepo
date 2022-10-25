@@ -66,28 +66,38 @@ struct NewTaskView: View {
                         }
                         
                         // MARK: - Priority section
-                        HStack {
-                            Text(Const.priorityTitle)
-                                .font(.headline)
-                            Spacer()
-                            Text(taskPriority.rawValue)
-                                .font(.body)
-                            Image(systemName: "chevron.right")
+                        
+                        NavigationLink {
+                            PriorityView()
+                        } label: {
+                            HStack {
+                                Text(Const.priorityTitle)
+                                    .font(.headline)
+                                Spacer()
+                                Text(taskPriority.rawValue)
+                                    .font(.body)
+                                Image(systemName: "chevron.right")
+                            }
+                            .padding(13)
+                            .background(Const.accentColor)
+                            .cornerRadius(8)
                         }
-                        .padding(13)
-                        .background(Const.accentColor)
-                        .cornerRadius(8)
                         
                         // MARK: - Tags section
-                        HStack {
-                            Text(Const.tagsTitle)
-                                .font(.headline)
-                            Spacer()
-                            Image(systemName: "chevron.right")
+                        
+                        NavigationLink {
+                            TagsSelectionView()
+                        } label: {
+                            HStack {
+                                Text(Const.tagsTitle)
+                                    .font(.headline)
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                            }
+                            .padding(13)
+                            .background(Const.accentColor)
+                            .cornerRadius(8)
                         }
-                        .padding(13)
-                        .background(Const.accentColor)
-                        .cornerRadius(8)
                         
                         Spacer()
                     }
