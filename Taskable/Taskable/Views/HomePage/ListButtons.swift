@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ListButtons: View {
+    @State private var isNewTaskViewPresented: Bool = false
     @State private var selectedTag: Priority = .normal
     var body: some View {
         HStack {
@@ -22,10 +23,18 @@ struct ListButtons: View {
             }.tint(Color(red: 0.973, green: 0.412, blue: 0.416))
                 .padding(.leading, 8.0)
                 Spacer()
-            Image(systemName: "plus")
-                .foregroundColor(Color(red: 0.973, green: 0.412, blue: 0.416))
-                .padding(.trailing, 15.0)
-                .scaleEffect(1.5)
+            Button {
+                isNewTaskViewPresented.toggle()
+            } label: {
+                Image(systemName: "plus")
+                    .foregroundColor(Color(red: 0.973, green: 0.412, blue: 0.416))
+                    .padding(.trailing, 15.0)
+                    .scaleEffect(1.5)
+            }
+            
+        }
+        .sheet(isPresented: $isNewTaskViewPresented) {
+            NewTaskView()
         }
         
     }
