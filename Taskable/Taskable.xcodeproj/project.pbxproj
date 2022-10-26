@@ -11,9 +11,11 @@
 		B724153D290681AF009E8595 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B724153C290681AF009E8595 /* ContentView.swift */; };
 		B724153F290681B0009E8595 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B724153E290681B0009E8595 /* Assets.xcassets */; };
 		B7241542290681B0009E8595 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7241541290681B0009E8595 /* Preview Assets.xcassets */; };
-		B724156429068357009E8595 /* Tasky.swift in Sources */ = {isa = PBXBuildFile; fileRef = B724156129068357009E8595 /* Tasky.swift */; };
-		B724156529068357009E8595 /* database.swift in Sources */ = {isa = PBXBuildFile; fileRef = B724156229068357009E8595 /* database.swift */; };
 		B724156629068357009E8595 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B724156329068357009E8595 /* TaskViewModel.swift */; };
+		C1191A9629091F940081E638 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1191A9529091F940081E638 /* Priority.swift */; };
+		C1191A9B290921460081E638 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1191A9A290921460081E638 /* Persistence.swift */; };
+		C1191A9D2909216C0081E638 /* Tasky.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1191A9C2909216C0081E638 /* Tasky.swift */; };
+		C1191AA029093EF70081E638 /* Taskable.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1191A972909208E0081E638 /* Taskable.xcdatamodeld */; };
 		C17EE6B82906877A005F47EA /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17EE6B72906877A005F47EA /* NewTaskView.swift */; };
 		C1EF641F2907D92C00108625 /* TagsSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF641E2907D92C00108625 /* TagsSelectionView.swift */; };
 /* End PBXBuildFile section */
@@ -24,9 +26,11 @@
 		B724153C290681AF009E8595 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B724153E290681B0009E8595 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7241541290681B0009E8595 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B724156129068357009E8595 /* Tasky.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasky.swift; sourceTree = "<group>"; };
-		B724156229068357009E8595 /* database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = database.swift; sourceTree = "<group>"; };
 		B724156329068357009E8595 /* TaskViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		C1191A9529091F940081E638 /* Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
+		C1191A982909208E0081E638 /* Taskable.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Taskable.xcdatamodel; sourceTree = "<group>"; };
+		C1191A9A290921460081E638 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		C1191A9C2909216C0081E638 /* Tasky.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasky.swift; sourceTree = "<group>"; };
 		C17EE6B72906877A005F47EA /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 		C1EF641E2907D92C00108625 /* TagsSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsSelectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +65,7 @@
 		B7241539290681AF009E8595 /* Taskable */ = {
 			isa = PBXGroup;
 			children = (
+				C1191A972909208E0081E638 /* Taskable.xcdatamodeld */,
 				C17EE6B9290689B1005F47EA /* ViewModel */,
 				C10F1F20290686BE00CDAEBF /* Views */,
 				B724156029068357009E8595 /* Model */,
@@ -83,8 +88,9 @@
 		B724156029068357009E8595 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B724156129068357009E8595 /* Tasky.swift */,
-				B724156229068357009E8595 /* database.swift */,
+				C1191A9529091F940081E638 /* Priority.swift */,
+				C1191A9A290921460081E638 /* Persistence.swift */,
+				C1191A9C2909216C0081E638 /* Tasky.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,13 +190,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1191AA029093EF70081E638 /* Taskable.xcdatamodeld in Sources */,
 				B724153D290681AF009E8595 /* ContentView.swift in Sources */,
-				B724156429068357009E8595 /* Tasky.swift in Sources */,
 				C1EF641F2907D92C00108625 /* TagsSelectionView.swift in Sources */,
+				C1191A9D2909216C0081E638 /* Tasky.swift in Sources */,
 				C17EE6B82906877A005F47EA /* NewTaskView.swift in Sources */,
-				B724156529068357009E8595 /* database.swift in Sources */,
 				B724156629068357009E8595 /* TaskViewModel.swift in Sources */,
 				B724153B290681AF009E8595 /* TaskableApp.swift in Sources */,
+				C1191A9629091F940081E638 /* Priority.swift in Sources */,
+				C1191A9B290921460081E638 /* Persistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +399,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C1191A972909208E0081E638 /* Taskable.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C1191A982909208E0081E638 /* Taskable.xcdatamodel */,
+			);
+			currentVersion = C1191A982909208E0081E638 /* Taskable.xcdatamodel */;
+			path = Taskable.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B724152F290681AF009E8595 /* Project object */;
 }

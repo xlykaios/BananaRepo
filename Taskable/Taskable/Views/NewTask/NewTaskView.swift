@@ -17,7 +17,10 @@ struct NewTaskView: View {
     @State private var hasDeadline: Bool = true
     @State private var date = Date()
     
+    // MARK: - Environment variables
+    
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.managedObjectContext) private var context
     
     // MARK: - View
     
@@ -53,7 +56,7 @@ struct NewTaskView: View {
                             .font(.headline)
                         Picker("", selection: $taskPriority) {
                             ForEach(Priority.allCases) { priority in
-                                Text(priority.rawValue.capitalized)
+                                Text(priority.title)
                             }
                         }
                         .pickerStyle(.menu)
@@ -71,6 +74,7 @@ struct NewTaskView: View {
                     }
                 }
             }
+            
             // MARK: - Navigation setup
             .navigationTitle(Const.viewTitle)
             .toolbar {
@@ -83,7 +87,7 @@ struct NewTaskView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(Const.doneBarButtonTitle) {
-                        // TODO: implement saving new task
+                        saveNewTask()
                         dismiss()
                     }
                 }
@@ -96,6 +100,24 @@ struct NewTaskView: View {
     init() {
         // Navigation bar title style
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.label]
+    }
+    
+    func saveNewTask() {
+        let newTask = Tasky(context: context)
+        newTask.id = UUID()
+        newTask.title = taskName
+        newTask.bio = taskNotes
+        newTask.priority = taskPriority
+        newTask.isDone = false
+        if hasDeadline {
+            newTask.deadline = date
+        }
+        
+        do {
+            try context.save()
+        } catch {
+            print(error)
+        }
     }
 }
 

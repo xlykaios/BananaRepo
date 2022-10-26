@@ -1,30 +1,28 @@
 //
 //  Task.swift
-//  hometest
+//  Taskable
 //
-//  Created by Antonio Giordano on 23/10/22.
+//  Created by Ekaterina Grishina on 26/10/22.
 //
 
 import Foundation
-import SwiftUI
+import CoreData
 
-enum Priority: String, Identifiable, Hashable, CaseIterable {
-    case urgent
-    case normal
-    var id: Self { self }
+public class Tasky: NSManagedObject, Identifiable {
+    @NSManaged public var id: UUID
+    @NSManaged public var title: String
+    @NSManaged public var bio: String
+    @NSManaged public var priorityNumber: Int32
+    @NSManaged public var isDone: Bool
+    @NSManaged public var deadline: Date
 }
 
-struct Tasky: Hashable, Identifiable{
-    var id: UUID
-    var name: String
-    var bio: String
-    var priority: Priority
-    var date: Date?
-    /// tag ?
-    
-    
-    static func emptyTask() -> Tasky {
-        Tasky(id: UUID(), name: "", bio: "", priority: .normal)
+extension Tasky {
+    var priority: Priority {
+        get {
+            return Priority(rawValue: Int(priorityNumber)) ?? .normal }
+        set {
+            self.priorityNumber = Int32(newValue.rawValue)
+        }
     }
 }
-
