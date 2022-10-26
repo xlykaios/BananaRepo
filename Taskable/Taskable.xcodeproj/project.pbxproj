@@ -113,6 +113,7 @@
 		B7F39D242909452700B3640D /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				B7F39D172909451E00B3640D /* TaskListViewModes */,
 				B7F39D1A2909451E00B3640D /* Test.swift */,
 				B7F39D1B2909451E00B3640D /* TaskRow.swift */,
 				B7F39D1C2909451E00B3640D /* ListButtons.swift */,
@@ -126,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				B7F39D242909452700B3640D /* HomePage */,
-				B7F39D172909451E00B3640D /* TaskListViewModes */,
 				C10F1F21290686C500CDAEBF /* NewTask */,
 			);
 			path = Views;
