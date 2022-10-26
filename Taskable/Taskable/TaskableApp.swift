@@ -11,11 +11,13 @@ import SwiftUI
 struct TaskableApp: App {
     
     let persistenceController = PersistenceController.shared
+    @StateObject private var viewModel: TaskViewModel = TaskViewModel()
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Test()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(viewModel)
         }
     }
 }
