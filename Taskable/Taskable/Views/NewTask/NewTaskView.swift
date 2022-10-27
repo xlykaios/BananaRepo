@@ -14,7 +14,7 @@ struct NewTaskView: View {
     @State private var taskName = ""
     @State private var taskNotes = ""
     @State private var taskPriority: Priority = .urgent
-    @State private var hasDeadline: Bool = true
+    @State private var hasDeadline: Bool = false
     @State private var date = Date()
     
     // MARK: - Environment variables
@@ -103,6 +103,10 @@ struct NewTaskView: View {
     }
     
     func saveNewTask() {
+        guard !taskName.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty else {
+            return
+        }
+        
         let newTask = Tasky(context: context)
         newTask.id = UUID()
         newTask.title = taskName
@@ -136,6 +140,8 @@ private extension NewTaskView {
         static let dateTitle = "Date"
         static let priorityTitle = "Priority"
         static let tagsTitle = "Tags"
+        
+        static let alertMessage = "The title shouldn't be empty"
         
         static let backgroundColor = Color("BackgroundColor")
         static let accentColor = Color(.systemGray6)
