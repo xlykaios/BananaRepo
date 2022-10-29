@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B716D93E290BC8BD0017C901 /* ListCoreDataUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B716D93D290BC8BD0017C901 /* ListCoreDataUI.swift */; };
 		B724153B290681AF009E8595 /* TaskableApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B724153A290681AF009E8595 /* TaskableApp.swift */; };
 		B724153F290681B0009E8595 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B724153E290681B0009E8595 /* Assets.xcassets */; };
 		B7241542290681B0009E8595 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7241541290681B0009E8595 /* Preview Assets.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B716D93D290BC8BD0017C901 /* ListCoreDataUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoreDataUI.swift; sourceTree = "<group>"; };
 		B7241537290681AF009E8595 /* Taskable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taskable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B724153A290681AF009E8595 /* TaskableApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskableApp.swift; sourceTree = "<group>"; };
 		B724153E290681B0009E8595 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			children = (
 				B7F39D182909451E00B3640D /* TaskListView.swift */,
 				B7F39D192909451E00B3640D /* TaskListViewAllOnSide.swift */,
+				B716D93D290BC8BD0017C901 /* ListCoreDataUI.swift */,
 			);
 			path = TaskListViewModes;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B716D93E290BC8BD0017C901 /* ListCoreDataUI.swift in Sources */,
 				B7F39D202909451E00B3640D /* TaskListViewAllOnSide.swift in Sources */,
 				B7F39D222909451E00B3640D /* TaskRow.swift in Sources */,
 				B7F39D2A290945F200B3640D /* Tasky.swift in Sources */,

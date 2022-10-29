@@ -19,7 +19,7 @@ struct Test: View {
                 ListButtons()
                     .padding(.bottom, 30.0)
                     .frame(width: 400.0)
-                TaskListViewAllOnSide()
+                ListCoreDataUI()
                     .padding(.top, -22.0)
             }
         }

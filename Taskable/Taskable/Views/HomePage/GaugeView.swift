@@ -11,6 +11,7 @@ import SwiftUI
 
 
 struct GaugeView: View {
+    @FetchRequest(entity: Tasky.entity(), sortDescriptors: []) var taskitems : FetchedResults<Tasky>
     @EnvironmentObject var TaskyVM: TaskViewModel
     @State private var minValue = 0.0
     @State private var maxValue = 0.0
@@ -26,13 +27,13 @@ struct GaugeView: View {
                 .font(.title3)
                 .fontWeight(.medium)
                 .padding(.bottom, 60.0)
-            Gauge(value: TaskyVM.counter, in: minValue...urgentTaskCounter(taskVM: TaskyVM)) {
+            Gauge(value: TaskyVM.counter, in: minValue...urgentTaskCounter(taskVM: taskitems)) {
                 } currentValueLabel: {
                     Text(TaskyVM.counter.formatted())
                 } minimumValueLabel: {
                     Text("")
                 } maximumValueLabel: {
-                    Text(urgentTaskCounter(taskVM: TaskyVM).formatted()+" Remaining")
+                    Text(urgentTaskCounter(taskVM: taskitems).formatted()+" Remaining")
                 }
                 .padding(.bottom, 24.0)
                 .gaugeStyle(.accessoryCircular)
@@ -44,6 +45,16 @@ struct GaugeView: View {
 //                .fontWeight(.light)
         }
            // .scaleEffect(3)
+    }
+    
+    func urgentTaskCounter(taskVM : FetchedResults<Tasky>) -> Double{
+        var urgentCounter : Double = 0.0
+        for item in taskVM {
+            if (item.priority == .urgent){
+                urgentCounter += 1.0
+            }
+        }
+        return urgentCounter
     }
 }
 
@@ -59,15 +70,6 @@ struct GaugeView_Previews: PreviewProvider {
 
 //DEPRECATED FUNC FOR COUNTER
 
-func urgentTaskCounter(taskVM : TaskViewModel) -> Double{
-    var urgentCounter : Double = 0.0
-    for item in taskVM.ClassifiedTasks {
-        if (item.priority == .urgent){
-            urgentCounter += 1.0
-        }
-    }
-    return urgentCounter
-}
  
 
 
