@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B70EB88629118AE1006DA2B8 /* GetThingsDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70EB88029118AE1006DA2B8 /* GetThingsDoneView.swift */; };
+		B70EB88729118AE1006DA2B8 /* FocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70EB88129118AE1006DA2B8 /* FocusView.swift */; };
+		B70EB88829118AE1006DA2B8 /* SmartGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70EB88229118AE1006DA2B8 /* SmartGoalsView.swift */; };
+		B70EB88929118AE1006DA2B8 /* EisenhowerMatrixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70EB88329118AE1006DA2B8 /* EisenhowerMatrixView.swift */; };
+		B70EB88A29118AE1006DA2B8 /* PomodoroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70EB88429118AE1006DA2B8 /* PomodoroView.swift */; };
+		B70EB88B29118AE1006DA2B8 /* EatThatFrogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70EB88529118AE1006DA2B8 /* EatThatFrogView.swift */; };
+		B70EB88D29118AFE006DA2B8 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70EB88C29118AFE006DA2B8 /* TimerModel.swift */; };
 		B716D93E290BC8BD0017C901 /* ListCoreDataUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B716D93D290BC8BD0017C901 /* ListCoreDataUI.swift */; };
 		B724153B290681AF009E8595 /* TaskableApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B724153A290681AF009E8595 /* TaskableApp.swift */; };
 		B724153F290681B0009E8595 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B724153E290681B0009E8595 /* Assets.xcassets */; };
@@ -30,6 +37,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B70EB88029118AE1006DA2B8 /* GetThingsDoneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetThingsDoneView.swift; sourceTree = "<group>"; };
+		B70EB88129118AE1006DA2B8 /* FocusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusView.swift; sourceTree = "<group>"; };
+		B70EB88229118AE1006DA2B8 /* SmartGoalsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartGoalsView.swift; sourceTree = "<group>"; };
+		B70EB88329118AE1006DA2B8 /* EisenhowerMatrixView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EisenhowerMatrixView.swift; sourceTree = "<group>"; };
+		B70EB88429118AE1006DA2B8 /* PomodoroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroView.swift; sourceTree = "<group>"; };
+		B70EB88529118AE1006DA2B8 /* EatThatFrogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EatThatFrogView.swift; sourceTree = "<group>"; };
+		B70EB88C29118AFE006DA2B8 /* TimerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		B716D93D290BC8BD0017C901 /* ListCoreDataUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoreDataUI.swift; sourceTree = "<group>"; };
 		B7241537290681AF009E8595 /* Taskable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taskable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B724153A290681AF009E8595 /* TaskableApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskableApp.swift; sourceTree = "<group>"; };
@@ -64,6 +78,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B70EB87F29118AE1006DA2B8 /* FocusViews */ = {
+			isa = PBXGroup;
+			children = (
+				B70EB88029118AE1006DA2B8 /* GetThingsDoneView.swift */,
+				B70EB88129118AE1006DA2B8 /* FocusView.swift */,
+				B70EB88229118AE1006DA2B8 /* SmartGoalsView.swift */,
+				B70EB88329118AE1006DA2B8 /* EisenhowerMatrixView.swift */,
+				B70EB88429118AE1006DA2B8 /* PomodoroView.swift */,
+				B70EB88529118AE1006DA2B8 /* EatThatFrogView.swift */,
+			);
+			path = FocusViews;
+			sourceTree = "<group>";
+		};
 		B724152E290681AF009E8595 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +132,7 @@
 		B724156029068357009E8595 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B70EB88C29118AFE006DA2B8 /* TimerModel.swift */,
 				C1191AA329094A830081E638 /* Persistence.swift */,
 				B7F39D29290945F200B3640D /* Tasky.swift */,
 				B7F39D252909455F00B3640D /* Priority.swift */,
@@ -140,6 +168,7 @@
 		C10F1F20290686BE00CDAEBF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B70EB87F29118AE1006DA2B8 /* FocusViews */,
 				B7F39D242909452700B3640D /* HomePage */,
 				C10F1F21290686C500CDAEBF /* NewTask */,
 			);
@@ -235,6 +264,7 @@
 			files = (
 				B716D93E290BC8BD0017C901 /* ListCoreDataUI.swift in Sources */,
 				B7F39D202909451E00B3640D /* TaskListViewAllOnSide.swift in Sources */,
+				B70EB88A29118AE1006DA2B8 /* PomodoroView.swift in Sources */,
 				B7F39D222909451E00B3640D /* TaskRow.swift in Sources */,
 				B7F39D2A290945F200B3640D /* Tasky.swift in Sources */,
 				B7F39D1F2909451E00B3640D /* TaskListView.swift in Sources */,
@@ -242,14 +272,20 @@
 				C17EE6B82906877A005F47EA /* NewTaskView.swift in Sources */,
 				C1191AA929094AD50081E638 /* OldTasky.swift in Sources */,
 				B7F39D212909451E00B3640D /* Test.swift in Sources */,
+				B70EB88729118AE1006DA2B8 /* FocusView.swift in Sources */,
 				B724156529068357009E8595 /* database.swift in Sources */,
+				B70EB88D29118AFE006DA2B8 /* TimerModel.swift in Sources */,
+				B70EB88B29118AE1006DA2B8 /* EatThatFrogView.swift in Sources */,
 				B7F39D1D2909451E00B3640D /* FocusButton.swift in Sources */,
 				C1191AA229094A680081E638 /* TagsSelectionView.swift in Sources */,
 				C1191AA429094A830081E638 /* Persistence.swift in Sources */,
+				B70EB88629118AE1006DA2B8 /* GetThingsDoneView.swift in Sources */,
 				B7F39D272909455F00B3640D /* Priority.swift in Sources */,
 				B7F39D232909451E00B3640D /* ListButtons.swift in Sources */,
+				B70EB88829118AE1006DA2B8 /* SmartGoalsView.swift in Sources */,
 				B7F39D1E2909451E00B3640D /* GaugeView.swift in Sources */,
 				B7F39D282909455F00B3640D /* TaskViewModel.swift in Sources */,
+				B70EB88929118AE1006DA2B8 /* EisenhowerMatrixView.swift in Sources */,
 				B724153B290681AF009E8595 /* TaskableApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
