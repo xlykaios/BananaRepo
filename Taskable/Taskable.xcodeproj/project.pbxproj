@@ -26,6 +26,7 @@
 		C1191AA729094A990081E638 /* Taskable.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1191AA529094A990081E638 /* Taskable.xcdatamodeld */; };
 		C1191AA929094AD50081E638 /* OldTasky.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1191AA829094AD50081E638 /* OldTasky.swift */; };
 		C17EE6B82906877A005F47EA /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17EE6B72906877A005F47EA /* NewTaskView.swift */; };
+		C1F1B8E3290A90C900BB41D0 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F1B8E2290A90C900BB41D0 /* Tag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		C1191AA629094A990081E638 /* Taskable.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Taskable.xcdatamodel; sourceTree = "<group>"; };
 		C1191AA829094AD50081E638 /* OldTasky.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldTasky.swift; sourceTree = "<group>"; };
 		C17EE6B72906877A005F47EA /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
+		C1F1B8E2290A90C900BB41D0 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				B7F39D252909455F00B3640D /* Priority.swift */,
 				B724156229068357009E8595 /* database.swift */,
 				C1191AA829094AD50081E638 /* OldTasky.swift */,
+				C1F1B8E2290A90C900BB41D0 /* Tag.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				B7F39D1F2909451E00B3640D /* TaskListView.swift in Sources */,
 				C1191AA729094A990081E638 /* Taskable.xcdatamodeld in Sources */,
 				C17EE6B82906877A005F47EA /* NewTaskView.swift in Sources */,
+				C1F1B8E3290A90C900BB41D0 /* Tag.swift in Sources */,
 				C1191AA929094AD50081E638 /* OldTasky.swift in Sources */,
 				B7F39D212909451E00B3640D /* Test.swift in Sources */,
 				B724156529068357009E8595 /* database.swift in Sources */,

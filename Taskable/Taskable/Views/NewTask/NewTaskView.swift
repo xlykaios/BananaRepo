@@ -16,6 +16,7 @@ struct NewTaskView: View {
     @State private var taskPriority: Priority = .urgent
     @State private var hasDeadline: Bool = false
     @State private var date = Date()
+    @State private var tag: Tag?
     
     // MARK: - Environment variables
     
@@ -65,11 +66,13 @@ struct NewTaskView: View {
                 // MARK: - Tags section
                 Section {
                     NavigationLink {
-                        TagsSelectionView()
+                        TagsSelectionView(selectedTag: $tag)
                     } label: {
                         HStack {
                             Text(Const.tagsTitle)
                                 .font(.headline)
+                            Spacer()
+                            Text(tag?.rawValue.capitalized ?? "")
                         }
                     }
                 }
@@ -116,6 +119,9 @@ struct NewTaskView: View {
         if hasDeadline {
             newTask.deadline = date
         }
+        if let tag = self.tag {
+            newTask.tag = tag.rawValue
+        } 
         
         do {
             try context.save()

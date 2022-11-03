@@ -14,7 +14,8 @@ public class Tasky: NSManagedObject, Identifiable {
     @NSManaged public var bio: String
     @NSManaged public var priorityNumber: Int32
     @NSManaged public var isDone: Bool
-    @NSManaged public var deadline: Date
+    @NSManaged public var deadline: Date?
+    @NSManaged public var tag: String?
 }
 
 extension Tasky {
