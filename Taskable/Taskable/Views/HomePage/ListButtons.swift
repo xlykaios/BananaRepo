@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListButtons: View {
     @State private var isNewTaskViewPresented: Bool = false
-    @State private var selectedTag: Priority = .normal
+    @State private var selectedTag: Priority = .today
     var body: some View {
         HStack {
            
@@ -18,6 +18,8 @@ struct ListButtons: View {
                 .padding(.leading, 15.0)
                 .imageScale(.large)*/
             Picker("Priority", selection : $selectedTag){
+                Text("All").tag(Priority.all)
+                Text("Today").tag(Priority.today)
                 Text("Urgent").tag(Priority.urgent)
                 Text("Normal").tag(Priority.normal)
             }.tint(Color(red: 0.973, green: 0.412, blue: 0.416))

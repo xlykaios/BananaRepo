@@ -18,6 +18,8 @@ struct NewTaskView: View {
     @State private var date = Date()
     @State private var tag: Tag?
     
+    @State private var showingAlert = false
+    
     // MARK: - Environment variables
     
     @Environment(\.dismiss) private var dismiss
@@ -90,10 +92,17 @@ struct NewTaskView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(Const.doneBarButtonTitle) {
+                        guard !taskName.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty else {
+                            showingAlert.toggle()
+                            return
+                        }
                         saveNewTask()
                         dismiss()
                     }
                 }
+            }
+            .alert(Const.alertMessage, isPresented: $showingAlert) {
+                Button(Const.okButton, role: .cancel) { }
             }
         }
     }
@@ -106,10 +115,6 @@ struct NewTaskView: View {
     }
     
     func saveNewTask() {
-        guard !taskName.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty else {
-            return
-        }
-        
         let newTask = Tasky(context: context)
         newTask.id = UUID()
         newTask.title = taskName
@@ -148,6 +153,7 @@ private extension NewTaskView {
         static let tagsTitle = "Tags"
         
         static let alertMessage = "The title shouldn't be empty"
+        static let okButton = "OK"
         
         static let backgroundColor = Color("BackgroundColor")
         static let accentColor = Color(.systemGray6)

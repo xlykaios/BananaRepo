@@ -20,13 +20,16 @@ struct GrowingButton: ButtonStyle {
 }
 
 struct FocusButton: View {
+    @State private var isFocusViewPresented: Bool = false
     var body: some View {
         Button("Tap to Focus"){
-            print("Button pressed!")
+            isFocusViewPresented.toggle()
         }
         .padding()
                 .buttonStyle(GrowingButton())
-        
+                .sheet(isPresented: $isFocusViewPresented) {
+                    FocusView()
+                }
     }
 }
 
