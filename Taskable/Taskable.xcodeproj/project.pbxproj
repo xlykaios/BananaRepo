@@ -132,14 +132,22 @@
 		B724156029068357009E8595 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B7D3040629245F4100F6B7FB /* CoreDataStuff */,
 				B70EB88C29118AFE006DA2B8 /* TimerModel.swift */,
-				C1191AA329094A830081E638 /* Persistence.swift */,
-				B7F39D29290945F200B3640D /* Tasky.swift */,
 				B7F39D252909455F00B3640D /* Priority.swift */,
 				B724156229068357009E8595 /* database.swift */,
 				C1191AA829094AD50081E638 /* OldTasky.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B7D3040629245F4100F6B7FB /* CoreDataStuff */ = {
+			isa = PBXGroup;
+			children = (
+				C1191AA329094A830081E638 /* Persistence.swift */,
+				B7F39D29290945F200B3640D /* Tasky.swift */,
+			);
+			path = CoreDataStuff;
 			sourceTree = "<group>";
 		};
 		B7F39D172909451E00B3640D /* TaskListViewModes */ = {
